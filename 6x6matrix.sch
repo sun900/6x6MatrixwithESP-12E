@@ -1510,10 +1510,6 @@ F 3 "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf" H 4050 6725 50  0001 
 	1    3950 7100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3650 3150 3600 3150
-Text GLabel 3600 3150 0    50   Input ~ 0
-GPIO_LED
 Wire Notes Line
 	3100 2500 9450 2500
 Wire Notes Line
@@ -1534,17 +1530,6 @@ F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 12500 3550 50  0001 C CNN
 F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 12600 3100 50  0001 C CNN
 	1    12500 3350
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 5F5FE523
-P 10950 7200
-F 0 "R1" V 11150 7150 50  0000 L CNN
-F 1 "470" V 11050 7100 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10880 7200 50  0001 C CNN
-F 3 "~" H 10950 7200 50  0001 C CNN
-	1    10950 7200
-	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:CP1_Small C38
@@ -1721,10 +1706,6 @@ Wire Wire Line
 	10800 4650 10800 4750
 Wire Wire Line
 	12300 4650 12300 4750
-Text GLabel 11250 5000 2    50   Input ~ 0
-GPIO_SW_Conn_1
-Text GLabel 12750 5000 2    50   Input ~ 0
-GPIO_SW_Conn_2
 Wire Notes Line
 	10200 3000 10200 4050
 Wire Notes Line
@@ -1737,26 +1718,14 @@ Text Notes 10200 4150 0    50   ~ 0
 POWER
 Text Notes 10200 5250 0    50   ~ 0
 SW_Conn\n
-Text GLabel 12400 6700 2    50   Input ~ 0
-GPIO_SW_Conn_2
-Text GLabel 12400 6500 2    50   Input ~ 0
-GPIO_SW_Conn_1
 NoConn ~ 11150 7400
 NoConn ~ 11150 7500
-NoConn ~ 12350 7400
-NoConn ~ 12350 7200
 NoConn ~ 12350 7100
 NoConn ~ 12350 7000
 NoConn ~ 12350 6900
-NoConn ~ 12350 6800
-NoConn ~ 12350 6600
 Connection ~ 11750 6150
 Wire Wire Line
-	11000 6150 11750 6150
-Wire Wire Line
-	11000 6600 11000 6150
-Wire Wire Line
-	11150 6600 11000 6600
+	11150 6600 11050 6600
 Wire Wire Line
 	11750 7700 11750 7750
 Wire Wire Line
@@ -1791,15 +1760,13 @@ $Comp
 L RF_Module:ESP-12E U2
 U 1 1 5F5FBADE
 P 11750 7000
-F 0 "U2" H 12100 7850 50  0000 C CNN
+F 0 "U2" H 11850 7750 50  0000 C CNN
 F 1 "ESP-12E" H 12100 7750 50  0000 C CNN
 F 2 "RF_Module:ESP-12E" H 11750 7000 50  0001 C CNN
 F 3 "http://wiki.ai-thinker.com/_media/esp8266/esp8266_series_modules_user_manual_v1.1.pdf" H 11400 7100 50  0001 C CNN
 	1    11750 7000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	11150 7200 11100 7200
 Wire Notes Line
 	10200 5850 10200 8050
 Wire Notes Line
@@ -1810,14 +1777,7 @@ Wire Notes Line
 	10200 5850 13150 5850
 Text Notes 10200 8150 0    50   ~ 0
 EPS-12E
-Text GLabel 10750 7200 0    50   Input ~ 0
-GPIO_LED
-Wire Wire Line
-	10800 7200 10750 7200
 NoConn ~ 11150 7300
-Wire Wire Line
-	12400 6500 12350 6500
-NoConn ~ 12350 6400
 Wire Wire Line
 	4600 3150 4250 3150
 Wire Wire Line
@@ -2704,8 +2664,6 @@ F 3 "" H 8750 7400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	9000 7100 9000 7900
-Wire Wire Line
-	12400 6700 12350 6700
 $Comp
 L power:GND #PWR0118
 U 1 1 5F875181
@@ -2776,5 +2734,70 @@ Wire Notes Line
 	10200 4350 13500 4350
 Wire Notes Line
 	10200 4350 10200 5150
-NoConn ~ 12350 7300
+Wire Wire Line
+	12350 7300 12450 7300
+Wire Wire Line
+	12450 7300 12450 7700
+Wire Wire Line
+	12450 7700 11750 7700
+Connection ~ 11750 7700
+Wire Wire Line
+	12450 6400 12450 6150
+Wire Wire Line
+	11750 6150 12450 6150
+Wire Wire Line
+	12350 6400 12450 6400
+Wire Wire Line
+	12350 6600 12450 6600
+Wire Wire Line
+	12450 6600 12450 6400
+Connection ~ 12450 6400
+Text Label 3450 2800 2    50   ~ 0
+LED_DATA
+Text Label 11250 5000 0    50   ~ 0
+SW_Conn_1
+Text Label 12750 5000 0    50   ~ 0
+SW_Conn2
+NoConn ~ 11150 7200
+$Comp
+L Device:R R1
+U 1 1 5F5FE523
+P 3550 3000
+F 0 "R1" H 3481 3046 50  0000 R CNN
+F 1 "470" H 3481 2955 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3480 3000 50  0001 C CNN
+F 3 "~" H 3550 3000 50  0001 C CNN
+	1    3550 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 3150 3650 3150
+Wire Wire Line
+	3550 2850 3550 2800
+Wire Wire Line
+	3450 2800 3550 2800
+Text Label 12550 6800 0    50   ~ 0
+LED_DATA
+Text Label 12550 6500 0    50   ~ 0
+TX
+Text Label 12550 6700 0    50   ~ 0
+RX
+Wire Wire Line
+	12350 6500 12550 6500
+Wire Wire Line
+	12350 6700 12550 6700
+Wire Wire Line
+	12350 6800 12550 6800
+Wire Wire Line
+	11050 6600 11050 6150
+Wire Wire Line
+	11050 6150 11750 6150
+Wire Wire Line
+	12350 7400 12550 7400
+Wire Wire Line
+	12350 7200 12550 7200
+Text Label 12550 7200 0    50   ~ 0
+SW_Conn1
+Text Label 12550 7400 0    50   ~ 0
+SW_Conn2
 $EndSCHEMATC
