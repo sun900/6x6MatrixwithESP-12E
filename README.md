@@ -1,1 +1,1 @@
-# 7x7MatrixwithESP-12E
+# RGBMatrixwithESP-12E
